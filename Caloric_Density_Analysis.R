@@ -27,16 +27,24 @@ eval.significance <- function(input) {
 }
 
 ### Define haplotype groups
-source("scripts/01.haplotype-groups.R")
+source("scripts/00.observer_bias.R")
+
+# Examine TCO Plot:
+tco_check
 
 # Read in cleaned up anonymized phenotype data
 data=read.csv(file="rawdata/phenotype-data-anon.csv",stringsAsFactors = F)
+
+### Define haplotype groups
+source("scripts/01.haplotype-groups.R")
 
 # Cleanup backcross form data (F1 cross info)
 source("scripts/02.backcross-cleanup.R")
 
 # Merge phenotype data with backcross/treatment data
 source("scripts/03.merge-data.R")
+
+merged$num_males=merged$X0000 + merged$X0001 + merged$X0010 + merged$X0011 + merged$X0100 + merged$X0101 + merged$X0110 + merged$X0111 + merged$X1000 + merged$X1001 + merged$X1010 + merged$X1011 + merged$X1100 + merged$X1101 + merged$X1110 + merged$X1111
 
 #save cleaned merged datasets
 write.csv(merged,file="output/phenotyping_data_cleaned.csv",row.names = F,quote = F)
@@ -47,6 +55,11 @@ source("scripts/04.haplotype-bias.R")
 
 # Calculate mean recombination by treatment and strain; runs COI script within it!
 source("scripts/05.recombination-rate.R")
+
+# Repeat Levene's Test for Homogeneity of Variance across subsetted dataset:
+leveneTest(num_offspring~interaction(PaternalStock, Treatment, vial_letter),recomb)
+#p=0.3178
+#No longer detectable heterogeneity across the dataset
 
 # Calculate fecundity by vial by day and avg fecundity/mom/day
 source("scripts/06.fecundity.R")

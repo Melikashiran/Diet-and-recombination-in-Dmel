@@ -49,6 +49,22 @@ source("scripts/05b.COI.R")
 ## Remove haplotype columns
 recomb <- recomb[,!names(recomb) %in% haplotypes]
 
+#Summarize without correction first to compare to FULL dataset
+recomb_rate=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M~MaternalVial+vial_letter+PaternalStock+Treatment,data=recomb,FUN=sum,na.rm=T)
+recomb_rate=recomb_rate[recomb_rate$num_M.sum>=5,]
+recomb_rate$ycv_rr=recomb_rate$ycv_count.sum/recomb_rate$num_M.sum
+recomb_rate$cvv_rr=recomb_rate$cvv_count.sum/recomb_rate$num_M.sum
+recomb_rate$vf_rr=recomb_rate$vf_count.sum/recomb_rate$num_M.sum
+recomb_rate$recomb_rate=rowSums(recomb_rate[,c("ycv_rr","cvv_rr","vf_rr")],na.rm=TRUE)
+recomb_summary <- aggregate(recomb_rate[, c("recomb_rate", "ycv_rr", "cvv_rr", "vf_rr")], by = list(recomb_rate$Treatment, recomb_rate$PaternalStock), mean)
+names(recomb_summary)[1:2] <- c("Treatment", "PaternalStock")
+
+recomb_summary$treat=ifelse(recomb_summary$Treatment=="2x",2,ifelse(recomb_summary$Treatment=="1x",1,0.5))
+
+
+write.csv(recomb_summary, "output/recombination_summary.csv", row.names = FALSE)
+
+# Repeat with Kosambi Correction for Table in Paper:
 recomb_rate=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M~MaternalVial+vial_letter+PaternalStock+Treatment,data=recomb,FUN=sum,na.rm=T)
 recomb_rate=recomb_rate[recomb_rate$num_M.sum>=5,]
 recomb_rate$ycv_rr=kosambi_correction(recomb_rate$ycv_count.sum/recomb_rate$num_M.sum)
@@ -59,8 +75,6 @@ recomb_summary <- aggregate(recomb_rate[, c("recomb_rate", "ycv_rr", "cvv_rr", "
 names(recomb_summary)[1:2] <- c("Treatment", "PaternalStock")
 
 recomb_summary$treat=ifelse(recomb_summary$Treatment=="2x",2,ifelse(recomb_summary$Treatment=="1x",1,0.5))
-
-
 
 
 ## Stats and figures

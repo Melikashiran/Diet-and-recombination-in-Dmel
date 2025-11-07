@@ -241,5 +241,6 @@ ggsave("images/Figure2.png",width=8,height=4)
 
 #Get values for Table in Paper:
 COI_summary=summaryBy(Interference~PaternalStock+Treatment+Interval,data=long_df4,FUN=mean,na.rm=T)
-COI_summary=summaryBy(Interference~PaternalStock+Treatment+Interval,data=long_df4,FUN=sd,na.rm=T)
-
+COI_summary2=summaryBy(Interference~PaternalStock+Treatment+Interval,data=long_df4,FUN=sd,na.rm=T)
+COI_summary$Interference.sd=COI_summary2$Interference.sd
+write.csv(COI_summary,"output/interference_summary.csv")
