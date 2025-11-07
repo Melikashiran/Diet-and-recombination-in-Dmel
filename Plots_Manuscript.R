@@ -174,7 +174,7 @@ fec_summary <- fec %>%
   dplyr::mutate(
     fold_change = `0.5x` / `2x`,
     log2_fold_change = log2(fold_change),
-    Trait = "Fecundity"
+    Trait = "Fertility"
   ) %>%
   dplyr::select(Stock, Trait, fold_change, log2_fold_change)
 
@@ -216,7 +216,7 @@ final_results <- final_results %>%
       "Length.mm" = "Testes Length"
     )
   )
-final_results$Trait <- factor(final_results$Trait, levels = c("Body mass", "RQ", "Testes Length", "Number of Oocytes", "Fecundity"))
+final_results$Trait <- factor(final_results$Trait, levels = c("Body mass", "RQ", "Testes Length", "Number of Oocytes", "Fertility"))
 plot_42 <- final_results %>%
   filter(Stock == 42) %>%
   ggplot(aes(x = log2_fold_change, y = Trait, fill = fill_color)) +

@@ -97,7 +97,7 @@ create_enrichment_dotplot <- function(data, title = "Enrichment Analysis",
     theme_bw() +
     theme(axis.text.y = element_text(size = 10),
           axis.text.x = element_text(size = 10),
-          plot.title = element_text(hjust = 0.5, size = 12, face = "bold"),
+          plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
           legend.title = element_text(size = 10),
           legend.text = element_text(size = 9)) +
     # Add guidelines
@@ -151,7 +151,7 @@ create_KEGG_dotplot <- function(kegg_data, max_terms = 20) {
 
 # Save plots
  ggsave("images/GO_enrichment_dotplot.png", go_plot, width = 10, height = 8, dpi = 300)
- ggsave("images/KEGG_enrichment_dotplot.png", kegg_plot, width = 10, height = 8, dpi = 300)
+ ggsave("images/KEGG_enrichment_dotplot.png", kegg_plot, width = 6, height = 5, dpi = 300)
 
 # Advanced: Create faceted plot for GO categories
 create_GO_faceted_dotplot <- function(go_data, max_terms_per_category = 10) {
@@ -187,11 +187,11 @@ create_GO_faceted_dotplot <- function(go_data, max_terms_per_category = 10) {
          y = "GO Term Description",
          title = "GO Enrichment Analysis by Category") +
     theme_bw() +
-    theme(axis.text.y = element_text(size = 9),
+    theme(axis.text.y = element_text(size = 10),
           axis.text.x = element_text(size = 10),
-          plot.title = element_text(hjust = 0.5, size = 12, face = "bold"),
-          strip.text = element_text(size = 10, face = "bold"),
-          legend.title = element_text(size = 10),
+          plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+          strip.text = element_text(size = 11, face = "bold"),
+          legend.title = element_text(size = 12),
           legend.text = element_text(size = 9))
   
   return(p)
@@ -211,5 +211,5 @@ scale_y_reordered <- function(..., sep = "___") {
 # Example usage for faceted GO plot:
  go_faceted_plot <- create_GO_faceted_dotplot(go_results)
  print(go_faceted_plot)
- ggsave("images/GO_enrichment_faceted_dotplot.png", go_faceted_plot, width = 12, height = 10, dpi = 300)
+ ggsave("images/GO_enrichment_faceted_dotplot.png", go_faceted_plot, width = 8, height = 6.5, dpi = 300)
 

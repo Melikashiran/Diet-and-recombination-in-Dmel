@@ -493,7 +493,7 @@ odds_figure_TUN_stock <- ggplot(odds_ratioTUN_summary,aes(x = as.factor(Stock), 
                 width = 0.2, size = 1, position = position_dodge(width = 0.6)) +
   scale_fill_manual(values = color_map) +
   scale_color_manual(values = color_map) +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "grey") +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "grey40") +
   ylab("TUNEL Odds Ratio") +
   xlab("") + ylim(c(0,3))+
   theme_base() +
