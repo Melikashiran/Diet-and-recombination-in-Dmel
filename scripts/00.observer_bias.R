@@ -85,7 +85,7 @@ total_cvv_rr <-total_cvv_count / total_num_M
 total_vf_rr <-total_vf_count / total_num_M
 
 ## Remove haplotype columns
-recomb <- recomb[,!names(recomb) %in% haplotypes]
+#recomb <- recomb[,!names(recomb) %in% haplotypes]
 
 recomb_rate=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M~MaternalVial+vial_letter+PaternalStock+Treatment,data=recomb,FUN=sum,na.rm=T)
 recomb_rate=recomb_rate[recomb_rate$num_M.sum>=5,]
@@ -112,5 +112,95 @@ leveneTest(num_males~as.factor(observer),merged)
 #p< 2.2e-16
 
 
+### Crossover interference calculation
 
+#COI <- recomb
+COI=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M+X0100 + X1011+X0010 + X1101+X0110 + X1001~PaternalStock+Treatment+vial_letter,data=recomb,FUN=sum,na.rm=T)
+COI$COI=COI$co_inds.sum/COI$num_M.sum
+COI$ycv_rr=COI$ycv_count.sum/COI$num_M.sum
+COI$cvv_rr=COI$cvv_count.sum/COI$num_M.sum
+COI$vf_rr=COI$vf_count.sum/COI$num_M.sum
+COI=COI[COI$num_M.sum>=5,]
+
+# expected vs observed
+COI$Exp_DCO_ycv_cvv <-  round((COI$ycv_rr * COI$cvv_rr)*COI$num_M,0)
+COI$Obs_DCO_ycv_cvv <-  COI$X0100 + COI$X1011
+
+COI$Exp_DCO_cvv_vf <-  round((COI$cvv_rr * COI$vf_rr)*COI$num_M,0)
+COI$Obs_DCO_cvv_vf <-  COI$X0010 + COI$X1101
+
+COI$Exp_DCO_ycv_vf <-  round((COI$ycv_rr * COI$vf_rr)*COI$num_M,0)
+COI$Obs_DCO_ycv_vf <-  COI$X0110 + COI$X1001
+
+
+# coefficient of coincidence and interference
+COI$COC_ycv_cvv <- COI$Obs_DCO_ycv_cvv / COI$Exp_DCO_ycv_cvv
+COI$Interference_ycv_cvv <- 1 - COI$COC_ycv_cvv
+
+COI$COC_cvv_vf <- COI$Obs_DCO_cvv_vf / COI$Exp_DCO_cvv_vf
+COI$Interference_cvv_vf <- 1 - COI$COC_cvv_vf
+
+COI$COC_ycv_vf <- COI$Obs_DCO_ycv_vf / COI$Exp_DCO_ycv_vf
+COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
+
+
+# Plotting interference against genetic map distance
+
+# Need to reorganize the data frame: Interference measure and Genetic Distance Measure
+wide_df=COI[,c("PaternalStock","Treatment","vial_letter","Interference_cvv_vf","Interference_ycv_cvv","Interference_ycv_vf")]
+colnames(wide_df)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
+long_df=melt(wide_df,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Interference")
+
+wide_df2=COI[,c("PaternalStock","Treatment","vial_letter","ycv_count.sum","cvv_count.sum","vf_count.sum","co_inds.sum")]
+wide_df2$ycv_cvv=rowSums(wide_df2[,c("ycv_count.sum","cvv_count.sum")],na.rm=TRUE)
+wide_df2$cvv_vf=rowSums(wide_df2[,c("cvv_count.sum","vf_count.sum")],na.rm=TRUE)
+wide_df2$ycv_vf=wide_df2$co_inds.sum
+wide_df2=wide_df2[,c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")]
+long_df2=melt(wide_df2,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Num_COs")
+
+wide_df3=COI[,c("PaternalStock","Treatment","vial_letter","num_M.sum")]
+wide_df3$sub1=wide_df3$num_M.sum
+wide_df3$sub2=wide_df3$num_M.sum
+long_df3=melt(wide_df3,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Total")
+
+wide_df5=COI[,c("PaternalStock","Treatment","vial_letter","Exp_DCO_cvv_vf","Exp_DCO_ycv_cvv","Exp_DCO_ycv_vf")]
+colnames(wide_df5)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
+long_df5=melt(wide_df5,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Exp_DCO")
+
+wide_df6=COI[,c("PaternalStock","Treatment","vial_letter","Obs_DCO_cvv_vf","Obs_DCO_ycv_cvv","Obs_DCO_ycv_vf")]
+colnames(wide_df6)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
+long_df6=melt(wide_df6,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Obs_DCO")
+
+long_df4=cbind(long_df,long_df2[,5],long_df3[,5],long_df5[,5],long_df6[,5])
+colnames(long_df4)=c("PaternalStock","Treatment","vial_letter","Interval","Interference","Num_COs","Total","Exp_DCO","Obs_DCO")
+long_df4$Gendist=long_df4$Num_COs/long_df4$Total
+long_df4$Gendist=ifelse(long_df4$Num_COs/long_df4$Total<0.5,long_df4$Num_COs/long_df4$Total,0.499+(((long_df4$Num_COs/long_df4$Total)-0.5)/100))
+#long_df4$kosambi_distances <- (100/4)*(log((1+(2*long_df4$Gendist))/(1-(2*long_df4$Gendist))))
+long_df4$PaternalStock=as.factor(long_df4$PaternalStock)
+
+ggplot(data=long_df4,aes(x=Gendist,y=Interference,col=Treatment))+geom_line()+facet_wrap(~PaternalStock)
+
+
+
+COI_final=summaryBy(Num_COs+ Total+ Exp_DCO +Obs_DCO~PaternalStock+Treatment+Interval,data=long_df4,FUN=sum,na.rm=T)
+
+COI_final$COC <- COI_final$Obs_DCO.sum / COI_final$Exp_DCO.sum
+COI_final$Interference <- 1 - COI_final$COC
+COI_final$Gendist=ifelse(COI_final$Num_COs/COI_final$Total<0.5,COI_final$Num_COs/COI_final$Total,0.499)
+#COI_final$kosambi_distances <- (100/4)*(log((1+(2*COI_final$Gendist))/(1-(2*COI_final$Gendist))))
+
+COI_final=summaryBy(Interference+Gendist~PaternalStock+Treatment+Interval,data=long_df4,FUN=mean,na.rm=T)
+col_pal2=c("#fdd0a2","#fd8d3c","#a63603","#c6dbef","#6baed6","#08519c")
+
+diet_gxe_int=ggplot(data=COI_final,aes(x=Gendist.mean,y=Interference.mean,col=Treatment))+geom_line()+facet_wrap(~PaternalStock) + xlab("Recombination Rate (Percent)") + ylab("Crossover Interference") +   #ggtitle("Interference versus Recombination Rate") +
+  theme_base() + scale_color_manual(values = col_pal2[1:3])
+#ylim(0.1,1) + xlim(0.15,0.52)
+diet_gxe_int
+ggsave("images/COI-vs-RR_42_FULL.png", height=5)
+
+diet_gxe_int=ggplot(data=COI_final,aes(x=Gendist.mean,y=Interference.mean,col=Treatment))+geom_line()+facet_wrap(~PaternalStock) + xlab("Recombination Rate (Percent)") + ylab("Crossover Interference") +   #ggtitle("Interference versus Recombination Rate") +
+  theme_base() + scale_color_manual(values = col_pal2[4:6])
+#ylim(0.1,1) + xlim(0.15,0.52)
+diet_gxe_int
+ggsave("images/COI-vs-RR_217_FULL.png", height=5)
 
