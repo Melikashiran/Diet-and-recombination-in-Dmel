@@ -1,11 +1,12 @@
-
+library(ggplot2)
+library(patchwork)
 
 ## Crossover Interference between the y-cv Interval and the cv-v Interval
 
 ### Crossover interference calculation
 
 #COI <- recomb
-COI=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M+X0100 + X1011+X0010 + X1101+X0110 + X1001~PaternalStock+Treatment+vial_letter,data=recomb,FUN=sum,na.rm=T)
+COI=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M+X0100 + X1011+X0010 + X1101+X0110 + X1001 + X0101 + X1010~PaternalStock+Treatment+vial_letter,data=recomb,FUN=sum,na.rm=T)
 COI$COI=COI$co_inds.sum/COI$num_M.sum
 COI$ycv_rr=COI$ycv_count.sum/COI$num_M.sum
 COI$cvv_rr=COI$cvv_count.sum/COI$num_M.sum
@@ -19,9 +20,11 @@ COI$Obs_DCO_ycv_cvv <-  COI$X0100 + COI$X1011
 COI$Exp_DCO_cvv_vf <-  round((COI$cvv_rr * COI$vf_rr)*COI$num_M,0)
 COI$Obs_DCO_cvv_vf <-  COI$X0010 + COI$X1101
 
-COI$Exp_DCO_ycv_vf <-  round((COI$ycv_rr * COI$vf_rr)*COI$num_M,0)
-COI$Obs_DCO_ycv_vf <-  COI$X0110 + COI$X1001
+#COI$Exp_DCO_ycv_vf <-  round((COI$ycv_rr * COI$vf_rr)*COI$num_M,0)
+#COI$Obs_DCO_ycv_vf <-  COI$X0110 + COI$X1001
 
+COI$Exp_TCO_ycv_vf <-  round((COI$ycv_rr * COI$cvv_rr * COI$vf_rr)*COI$num_M,0)
+COI$Obs_TCO_ycv_vf <- COI$X0101 + COI$X1010
 
 # coefficient of coincidence and interference
 COI$COC_ycv_cvv <- COI$Obs_DCO_ycv_cvv / COI$Exp_DCO_ycv_cvv
@@ -30,8 +33,12 @@ COI$Interference_ycv_cvv <- 1 - COI$COC_ycv_cvv
 COI$COC_cvv_vf <- COI$Obs_DCO_cvv_vf / COI$Exp_DCO_cvv_vf
 COI$Interference_cvv_vf <- 1 - COI$COC_cvv_vf
 
-COI$COC_ycv_vf <- COI$Obs_DCO_ycv_vf / COI$Exp_DCO_ycv_vf
+#COI$COC_ycv_vf <- COI$Obs_DCO_ycv_vf / COI$Exp_DCO_ycv_vf
+#COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
+
+COI$COC_ycv_vf <- COI$Obs_TCO_ycv_vf / COI$Exp_TCO_ycv_vf
 COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
+
 
 hist(COI$Interference_ycv_cvv)
 hist(COI$Interference_ycv_vf)
@@ -61,8 +68,8 @@ write.csv(anova_coi_ycv_cvv,"output/interference_ycv_cvv_model_table.csv")
 #ycv_vf
 #remove expected zero
 COI_test <- COI %>%
-  filter(Exp_DCO_ycv_vf > 0 )
-fit_ycv_vf <- glm(Obs_DCO_ycv_vf ~ Treatment * PaternalStock + offset(log(Exp_DCO_ycv_vf)), data=COI_test,family=quasipoisson(link = "log"))
+  filter(Exp_TCO_ycv_vf > 0 )
+fit_ycv_vf <- glm(Obs_TCO_ycv_vf ~ Treatment * PaternalStock + offset(log(Exp_TCO_ycv_vf)), data=COI_test,family=quasipoisson(link = "log"))
 #summary(fit_ycv_vf)
 
 anova_coi_ycv_vf <- anova(fit_ycv_vf, test="F")
@@ -167,11 +174,11 @@ wide_df3$sub1=wide_df3$num_M.sum
 wide_df3$sub2=wide_df3$num_M.sum
 long_df3=melt(wide_df3,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Total")
 
-wide_df5=COI[,c("PaternalStock","Treatment","vial_letter","Exp_DCO_cvv_vf","Exp_DCO_ycv_cvv","Exp_DCO_ycv_vf")]
+wide_df5=COI[,c("PaternalStock","Treatment","vial_letter","Exp_DCO_cvv_vf","Exp_DCO_ycv_cvv","Exp_TCO_ycv_vf")]
 colnames(wide_df5)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
 long_df5=melt(wide_df5,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Exp_DCO")
 
-wide_df6=COI[,c("PaternalStock","Treatment","vial_letter","Obs_DCO_cvv_vf","Obs_DCO_ycv_cvv","Obs_DCO_ycv_vf")]
+wide_df6=COI[,c("PaternalStock","Treatment","vial_letter","Obs_DCO_cvv_vf","Obs_DCO_ycv_cvv","Obs_TCO_ycv_vf")]
 colnames(wide_df6)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
 long_df6=melt(wide_df6,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Obs_DCO")
 
@@ -195,18 +202,90 @@ ggsave("images/COI-vs-RR_byDay.png", height=5)
 
 COI_final=summaryBy(Interference+kosambi_distances~PaternalStock+Treatment+Interval,data=long_df4,FUN=mean,na.rm=T)
 col_pal2=c("#fdd0a2","#fd8d3c","#a63603","#c6dbef","#6baed6","#08519c")
+ 
+#Add CO type to distinguish TCO and DCO values
+COI_final$crossover_type=ifelse(COI_final$Interval=="ycv_vf","TCO","DCO")
 
-diet_gxe_int=ggplot(data=COI_final,aes(x=kosambi_distances.mean,y=Interference.mean,col=Treatment))+geom_line()+facet_wrap(~PaternalStock) + xlab("Recombination Rate (cM)") + ylab("Crossover Interference") +   #ggtitle("Interference versus Recombination Rate") +
-  theme_base() + scale_color_manual(values = col_pal2[1:3])
+# DGRP_42 plot
+dgrp_42=subset(COI_final,COI_final$PaternalStock=="42")
+diet_gxe_42=ggplot(data=dgrp_42,aes(x=kosambi_distances.mean,y=Interference.mean,
+            col=Treatment,group = interaction(Treatment, crossover_type),
+            linetype = crossover_type,shape = crossover_type))+geom_line(linewidth=1.5)+
+  #facet_wrap#(~PaternalStock) + 
+  xlab("Recombination Rate (cM)") + ylab("Crossover Interference") +   
+  ggtitle("DGRP_42") + 
+  theme_base() + scale_color_manual(values = col_pal2[1:3])+ geom_point(size=5) +
+  scale_linetype_manual(values = c("DCO" = "solid", "TCO" = "dashed"),
+                        name = "Crossover\nType") 
   #ylim(0.1,1) + xlim(0.15,0.52)
-diet_gxe_int
+diet_gxe_42
 ggsave("images/COI-vs-RR_42.png", height=5)
 
-diet_gxe_int=ggplot(data=COI_final,aes(x=kosambi_distances.mean,y=Interference.mean,col=Treatment))+geom_line()+facet_wrap(~PaternalStock) + xlab("Recombination Rate (cM)") + ylab("Crossover Interference") +   #ggtitle("Interference versus Recombination Rate") +
-  theme_base() + scale_color_manual(values = col_pal2[4:6])
+#Repeat for 217
+dgrp_217=subset(COI_final,COI_final$PaternalStock=="217")
+diet_gxe_217=ggplot(data=dgrp_217,aes(x=kosambi_distances.mean,y=Interference.mean,
+                                     col=Treatment,group = interaction(Treatment, crossover_type),
+                                     linetype = crossover_type,shape = crossover_type))+geom_line(linewidth=1.5)+ #facet_wrap#(~PaternalStock) + 
+xlab("Recombination Rate (cM)") + ylab("Crossover Interference") +   
+  ggtitle("DGRP_217") + 
+  theme_base() + scale_color_manual(values = col_pal2[4:6])+ geom_point(size=5) +
+  scale_linetype_manual(values = c("DCO" = "solid", "TCO" = "dashed"),
+                        name = "Crossover\nType") 
+#ylim(0.1,1) + xlim(0.15,0.52)
+diet_gxe_217
+ggsave("images/COI-vs-RR_217.png", height=5)
+
+# Panel A: Chromosome map with markers
+chromosome_map <- ggplot() +
+  # Chromosome line
+  geom_segment(aes(x = 0, xend = 70, y = 0.5, yend = 0.5), 
+               size = 3, color = "gray30") +
+  # Centromere indicator
+  geom_point(aes(x = 68.5, y = 0.5), size = 5, shape = 16, color = "red") +
+  # Marker positions
+  geom_point(aes(x = c(0, 12, 33, 57), y = 0.5), 
+             size = 4, color = "black") +
+  geom_text(aes(x = c(0, 12, 33, 57), 
+                y = 0.7,
+                label = c("y (0)", "cv (12)", "v (33)", "f (57)")),
+            size = 3.5) +
+  # Interval brackets
+  annotate("segment", x = 0, xend = 12, y = 0.3, yend = 0.3, 
+           arrow = arrow(ends = "both", length = unit(0.1, "inches"))) +
+  annotate("segment", x = 12, xend = 33, y = 0.25, yend = 0.25,
+           arrow = arrow(ends = "both", length = unit(0.1, "inches"))) +
+  annotate("segment", x = 33, xend = 57, y = 0.2, yend = 0.2,
+           arrow = arrow(ends = "both", length = unit(0.1, "inches"))) +
+  ylim(0, 1) +
+  xlim(-5, 75) +
+  labs(x = "Map Position (cM)", y = "") +
+  theme_minimal() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank())
+#chromosome_map
+
+# Panel B: RR vs COI
+diet_gxe_int=ggplot(data=COI_final,aes(x=kosambi_distances.mean,y=Interference.mean,
+                                    col=interaction(Treatment, PaternalStock),group = interaction(Treatment,PaternalStock, crossover_type),
+                                    linetype = crossover_type,shape = crossover_type))+geom_line(linewidth=1.5)+
+  #facet_wrap#(~PaternalStock) + 
+  xlab("Recombination Rate (cM)") + ylab("Crossover Interference") +   
+  #ggtitle("DGRP_42") + 
+  theme_base() + scale_color_manual(values = col_pal2)+ geom_point(size=5) +
+  scale_linetype_manual(values = c("DCO" = "solid", "TCO" = "dashed"),
+                        name = "Crossover\nType") 
 #ylim(0.1,1) + xlim(0.15,0.52)
 diet_gxe_int
-ggsave("images/COI-vs-RR_217.png", height=5)
+
+# Combine into multipanel figure
+chromosome_map / diet_gxe_int +
+  plot_layout(heights = c(1, 3.5))
+
+chromosome_map / (diet_gxe_42 + diet_gxe_217) +
+  plot_layout(heights = c(1, 3.5))
+ggsave("images/COI-vs-RR_Combined.png", height=8.5, width=11)
+
 
 #pdf("images/diet_gxe_interference.pdf")
 #diet_gxe_int

@@ -115,7 +115,7 @@ leveneTest(num_males~as.factor(observer),merged)
 ### Crossover interference calculation
 
 #COI <- recomb
-COI=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M+X0100 + X1011+X0010 + X1101+X0110 + X1001~PaternalStock+Treatment+vial_letter,data=recomb,FUN=sum,na.rm=T)
+COI=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M+X0100 + X1011+X0010 + X1101+X0110 + X1001 + X0101 + X1010~PaternalStock+Treatment+vial_letter,data=recomb,FUN=sum,na.rm=T)
 COI$COI=COI$co_inds.sum/COI$num_M.sum
 COI$ycv_rr=COI$ycv_count.sum/COI$num_M.sum
 COI$cvv_rr=COI$cvv_count.sum/COI$num_M.sum
@@ -129,9 +129,11 @@ COI$Obs_DCO_ycv_cvv <-  COI$X0100 + COI$X1011
 COI$Exp_DCO_cvv_vf <-  round((COI$cvv_rr * COI$vf_rr)*COI$num_M,0)
 COI$Obs_DCO_cvv_vf <-  COI$X0010 + COI$X1101
 
-COI$Exp_DCO_ycv_vf <-  round((COI$ycv_rr * COI$vf_rr)*COI$num_M,0)
-COI$Obs_DCO_ycv_vf <-  COI$X0110 + COI$X1001
+#COI$Exp_DCO_ycv_vf <-  round((COI$ycv_rr * COI$vf_rr)*COI$num_M,0)
+#COI$Obs_DCO_ycv_vf <-  COI$X0110 + COI$X1001 
 
+COI$Exp_TCO_ycv_vf <-  round((COI$ycv_rr * COI$cvv_rr * COI$vf_rr)*COI$num_M,0)
+COI$Obs_TCO_ycv_vf <- COI$X0101 + COI$X1010
 
 # coefficient of coincidence and interference
 COI$COC_ycv_cvv <- COI$Obs_DCO_ycv_cvv / COI$Exp_DCO_ycv_cvv
@@ -140,9 +142,11 @@ COI$Interference_ycv_cvv <- 1 - COI$COC_ycv_cvv
 COI$COC_cvv_vf <- COI$Obs_DCO_cvv_vf / COI$Exp_DCO_cvv_vf
 COI$Interference_cvv_vf <- 1 - COI$COC_cvv_vf
 
-COI$COC_ycv_vf <- COI$Obs_DCO_ycv_vf / COI$Exp_DCO_ycv_vf
-COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
+#COI$COC_ycv_vf <- COI$Obs_DCO_ycv_vf / COI$Exp_DCO_ycv_vf
+#COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
 
+COI$COC_ycv_vf <- COI$Obs_TCO_ycv_vf / COI$Exp_TCO_ycv_vf
+COI$Interference_ycv_vf <- 1 - COI$COC_ycv_vf
 
 # Plotting interference against genetic map distance
 
@@ -163,11 +167,11 @@ wide_df3$sub1=wide_df3$num_M.sum
 wide_df3$sub2=wide_df3$num_M.sum
 long_df3=melt(wide_df3,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Total")
 
-wide_df5=COI[,c("PaternalStock","Treatment","vial_letter","Exp_DCO_cvv_vf","Exp_DCO_ycv_cvv","Exp_DCO_ycv_vf")]
+wide_df5=COI[,c("PaternalStock","Treatment","vial_letter","Exp_DCO_cvv_vf","Exp_DCO_ycv_cvv","Exp_TCO_ycv_vf")]
 colnames(wide_df5)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
 long_df5=melt(wide_df5,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Exp_DCO")
 
-wide_df6=COI[,c("PaternalStock","Treatment","vial_letter","Obs_DCO_cvv_vf","Obs_DCO_ycv_cvv","Obs_DCO_ycv_vf")]
+wide_df6=COI[,c("PaternalStock","Treatment","vial_letter","Obs_DCO_cvv_vf","Obs_DCO_ycv_cvv","Obs_TCO_ycv_vf")]
 colnames(wide_df6)=c("PaternalStock","Treatment","vial_letter","cvv_vf","ycv_cvv","ycv_vf")
 long_df6=melt(wide_df6,id.vars=c("PaternalStock","Treatment","vial_letter"),variable.name = "Interval",value.name = "Obs_DCO")
 
@@ -180,14 +184,6 @@ long_df4$PaternalStock=as.factor(long_df4$PaternalStock)
 
 ggplot(data=long_df4,aes(x=Gendist,y=Interference,col=Treatment))+geom_line()+facet_wrap(~PaternalStock)
 
-
-
-COI_final=summaryBy(Num_COs+ Total+ Exp_DCO +Obs_DCO~PaternalStock+Treatment+Interval,data=long_df4,FUN=sum,na.rm=T)
-
-COI_final$COC <- COI_final$Obs_DCO.sum / COI_final$Exp_DCO.sum
-COI_final$Interference <- 1 - COI_final$COC
-COI_final$Gendist=ifelse(COI_final$Num_COs/COI_final$Total<0.5,COI_final$Num_COs/COI_final$Total,0.499)
-#COI_final$kosambi_distances <- (100/4)*(log((1+(2*COI_final$Gendist))/(1-(2*COI_final$Gendist))))
 
 COI_final=summaryBy(Interference+Gendist~PaternalStock+Treatment+Interval,data=long_df4,FUN=mean,na.rm=T)
 col_pal2=c("#fdd0a2","#fd8d3c","#a63603","#c6dbef","#6baed6","#08519c")
