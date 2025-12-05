@@ -11,6 +11,28 @@ library(multcomp)
 library(doBy)
 library(stringr)
 
+#plot Figure 1D:
+table=read.csv(file="rawdata/meta_data_merged.csv",header = T,stringsAsFactors = F,na.strings = " -")
+
+d42=table$Starvation[table$DGRP.line=="DGRP_42"]
+d217=table$Starvation[table$DGRP.line=="DGRP_217"]
+
+pdf(file="images/DGRP_Starvation.pdf",width=4,height=4,pointsize=12) 
+# Kernel Density Plot for Starvation
+d <- density(table$Starvation, na.rm=T) # returns the density data
+plot(d, main="",cex=2,xlab="Starvation Resistance")
+polygon(d, col="grey")
+
+#plot 42
+abline(v=d42,col="#fd8d3c",lwd=3)
+text(d42-1,0.025, "DGRP_42", pos = 2, srt = 90,col="#fd8d3c",cex=1.25)
+
+#plot 217
+abline(v=d217,col="#08519c",lwd=3)
+text(d217-1,0.025, "DGRP_217", pos = 2, srt = 90,col="#08519c",cex=1.25)
+dev.off()
+
+#physiology data:
 resp <- read_csv("rawdata/RQ_Spring2023.csv", na = "NA")
 
 resp$Weight = resp$`Pre-Weight` * 1000

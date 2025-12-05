@@ -1,0 +1,207 @@
+DGRP.line,Starvation,Study,Stressor,chillcoma,Study,Stressor,survival_msb,Study,Stressor,survival_paraquat,Study,Stressor,Chromosomal arrangement,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,In.2L.t,In.2R.NS,In.2R.Y1,In.2R.Y2,In.2R.Y3,In.2R.Y4,In.2R.Y5,In.2R.Y6,In.2R.Y7,In.3L.P,In.3L.M,In.3L.Y,In.3R.P,In.3R.K,In.3R.Mo,In.3R.C
+DGRP_100,77.92,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST
+DGRP_101,57.76,Makay,Starvation,20.63917526,Mackay,chillcoma,19.65807981,Weber,survival_msb,19.66757275,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_105,73.12,Makay,Starvation,17.1875,Mackay,chillcoma,17.48689925,Weber,survival_msb,25.04061343,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST
+DGRP_109,53.44,Makay,Starvation,14.93617021,Mackay,chillcoma,18.70078814,Weber,survival_msb,20.13054398,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_129,42.7755102,Makay,Starvation,19.55102041,Mackay,chillcoma,22.51259369,Weber,survival_msb,17.28007275,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_136,104.32,Makay,Starvation,16.61616162,Mackay,chillcoma,32.56594604,Weber,survival_msb,20.84544974,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_138,59.52,Makay,Starvation,18.40206186,Mackay,chillcoma,28.75634369,Weber,survival_msb,12.74304398,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST
+DGRP_142,59.26530612,Makay,Starvation,11.76530612,Mackay,chillcoma,27.99870481,Weber,survival_msb,17.53840608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_149,47,Makay,Starvation,17.08080808,Mackay,chillcoma,20.96655368,Weber,survival_msb,15.64378803,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_153,59.04,Makay,Starvation,15.26262626,Mackay,chillcoma,40.28273258,Weber,survival_msb,11.79535053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_158,77.06122449,Makay,Starvation,11.94949495,Mackay,chillcoma,46.26745481,Weber,survival_msb,16.66410053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_161,53.76,Makay,Starvation,26.80412371,Mackay,chillcoma,18.89520365,Weber,survival_msb,11.59629299,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_176,54.20408163,Makay,Starvation,29.19791667,Mackay,chillcoma,24.76496225,Weber,survival_msb,17.79465608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_177,53.71428571,Makay,Starvation,24.79761905,Mackay,chillcoma,24.80356592,Weber,survival_msb,21.39247354,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_181,56.96,Makay,Starvation,26.52884615,Mackay,chillcoma,22.06004326,Weber,survival_msb,11.22920469,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_189,57.6,Makay,Starvation,22.7254902,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST
+DGRP_195,65.6,Makay,Starvation,13.90909091,Mackay,chillcoma,17.94939925,Weber,survival_msb,21.64118386,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_208,53.6,Makay,Starvation,14.6,Mackay,chillcoma,22.05006062,Weber,survival_msb,18.70778687,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_21,74.72,Makay,Starvation,18.98979592,Mackay,chillcoma,19.69094604,Weber,survival_msb,8.98285053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_217,106.56,Makay,Starvation,13.68367347,Mackay,chillcoma,18.17610229,Weber,survival_msb,17.59673942,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_223,68.16666667,Makay,Starvation,20.71875,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_227,52.16,Makay,Starvation,17.09803922,Mackay,chillcoma,24.85370646,Weber,survival_msb,15.58952216,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_228,65.95918367,Makay,Starvation,12.43877551,Mackay,chillcoma,28.76467703,Weber,survival_msb,25.19257275,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_229,39.34693878,Makay,Starvation,13.66666667,Mackay,chillcoma,17.40639743,Weber,survival_msb,11.26231481,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_233,73.14285714,Makay,Starvation,11.7979798,Mackay,chillcoma,26.59176036,Weber,survival_msb,14.05866898,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_235,71.33333333,Makay,Starvation,21.3627451,Mackay,chillcoma,33.48304674,Weber,survival_msb,14.72047454,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_237,53.6,Makay,Starvation,16.11764706,Mackay,chillcoma,41.17092703,Weber,survival_msb,24.8574041,Weber,survival_paraquat,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_239,59.22807018,Makay,Starvation,26.85148515,Mackay,chillcoma,35.781972,Weber,survival_msb,17.56179398,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_256, -, -, -,17.08247423,Mackay,chillcoma,45.85287147,Weber,survival_msb,16.99187831,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_26,39.11111111,Makay,Starvation,15.71578947,Mackay,chillcoma,21.90769951,Weber,survival_msb,10.70561095,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_28,50.08,Makay,Starvation,15.98989899,Mackay,chillcoma,17.37992173,Weber,survival_msb,11.70977761,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_280,69.83333333,Makay,Starvation,14.51546392,Mackay,chillcoma,31.88967703,Weber,survival_msb,20.18910053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_287,64.65306122,Makay,Starvation,12.88,Mackay,chillcoma,19.89797729,Weber,survival_msb,14.87476521,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_301,66.4,Makay,Starvation,15.48201439,Mackay,chillcoma,25.57861965,Weber,survival_msb,13.54882275,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_303,54.72,Makay,Starvation,18.63829787,Mackay,chillcoma,21.94450507,Weber,survival_msb,11.68831928,Weber,survival_paraquat,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_304,68.96,Makay,Starvation,15.01459854,Mackay,chillcoma,30.94945298,Weber,survival_msb,19.12484127,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_306,65.33333333,Makay,Starvation,14.93814433,Mackay,chillcoma,35.61256062,Weber,survival_msb,16.82113467,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_307,75.74468085,Makay,Starvation,12.82795699,Mackay,chillcoma,22.80492174,Weber,survival_msb,14.36959243,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_309,62.20408163,Makay,Starvation,9.871287129,Mackay,chillcoma,33.64233493,Weber,survival_msb,10.79115906,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_31,72.11940299,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_310,55.17241379,Makay,Starvation,19.22105263,Mackay,chillcoma,23.26802937,Weber,survival_msb,17.1651918,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_313,72.81632653,Makay,Starvation,24.95833333,Mackay,chillcoma,38.70613701,Weber,survival_msb,15.22375909,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_315,51.84,Makay,Starvation,13.96907216,Mackay,chillcoma,25.05839396,Weber,survival_msb,15.74243386,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_317,48.64,Makay,Starvation, -, -, -,24.65934882,Weber,survival_msb,16.90179894,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_318,59.74468085,Makay,Starvation,17.14285714,Mackay,chillcoma,29.37167521,Weber,survival_msb,19.78037037,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_319,64.83333333,Makay,Starvation,13.51578947,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_32,56.16,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_320,87.52,Makay,Starvation, -, -, -,29.6808766,Weber,survival_msb,20.24309358,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_321,52,Makay,Starvation, -, -, -,16.11004326,Weber,survival_msb,10.95073247,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_324,34.44897959,Makay,Starvation,18.51546392,Mackay,chillcoma,17.61950507,Weber,survival_msb,11.69899636,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_325,43.68,Makay,Starvation,14.93,Mackay,chillcoma,31.69662147,Weber,survival_msb,13.50658565,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_332,47.52,Makay,Starvation,14.21359223,Mackay,chillcoma,18.92228285,Weber,survival_msb,13.10837136,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_335,69.12,Makay,Starvation,15.05102041,Mackay,chillcoma,22.04901896,Weber,survival_msb,9.238886409,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_336,75.10204082,Makay,Starvation,22.6372549,Mackay,chillcoma, -, -, -, -, -, -,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_338,61.28,Makay,Starvation,11.15625,Mackay,chillcoma,21.53964809,Weber,survival_msb,19.38562831,Weber,survival_paraquat,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_340,57.63265306,Makay,Starvation,8.539325843,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_348,50.08,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_350,53,Makay,Starvation,12.98947368,Mackay,chillcoma,27.84141314,Weber,survival_msb,14.96886243,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_352,45.6,Makay,Starvation,11.85714286,Mackay,chillcoma,19.80457451,Weber,survival_msb,14.95507275,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_354,57.95918367,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_355,66.24,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_356,83.10204082,Makay,Starvation,8.58,Mackay,chillcoma,30.05217703,Weber,survival_msb,15.31690311,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_357,63.68,Makay,Starvation,13.9,Mackay,chillcoma,21.09450507,Weber,survival_msb,16.25121859,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_358,55.34693878,Makay,Starvation,11.86734694,Mackay,chillcoma,21.87236965,Weber,survival_msb,20.04222553,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_359,51.84,Makay,Starvation,13.02,Mackay,chillcoma,20.1017678,Weber,survival_msb,15.13853009,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_360,53.71428571,Makay,Starvation,9.255102041,Mackay,chillcoma,34.33131062,Weber,survival_msb,12.86465608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_361,55.84,Makay,Starvation,16.31313131,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_362,74.80701754,Makay,Starvation,14.56,Mackay,chillcoma,33.54085924,Weber,survival_msb,27.58840608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_365,50.5,Makay,Starvation,11.4375,Mackay,chillcoma,29.43894951,Weber,survival_msb,14.78680018,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_367,60.8,Makay,Starvation,12.31,Mackay,chillcoma,43.77506476,Weber,survival_msb,13.0793039,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_370,55.04,Makay,Starvation,17.16666667,Mackay,chillcoma,18.87263007,Weber,survival_msb,15.6667047,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_371,57.12,Makay,Starvation,14.77669903,Mackay,chillcoma,21.27295249,Weber,survival_msb,14.13066799,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_373,72.16,Makay,Starvation,13.68421053,Mackay,chillcoma,37.45205715,Weber,survival_msb,20.59373843,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_374,60.48,Makay,Starvation,15.6039604,Mackay,chillcoma,14.19285576,Weber,survival_msb,13.374666,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_375,66.72,Makay,Starvation,13.82828283,Mackay,chillcoma,40.43695298,Weber,survival_msb,17.49639219,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_377,64.16326531,Makay,Starvation,25.37,Mackay,chillcoma,25.03981757,Weber,survival_msb,12.14549934,Weber,survival_paraquat,INV/ST,INV/ST,ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_379,88.18181818,Makay,Starvation,14.72527473,Mackay,chillcoma,27.65006062,Weber,survival_msb,17.68593213,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_38,44.71428571,Makay,Starvation,16.17525773,Mackay,chillcoma,21.81881476,Weber,survival_msb,11.23379299,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_380,42.24,Makay,Starvation,13.98969072,Mackay,chillcoma,36.32575507,Weber,survival_msb,15.42729497,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_381,42.38297872,Makay,Starvation,15.80769231,Mackay,chillcoma,23.17141479,Weber,survival_msb,12.55234458,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_382,67.5,Makay,Starvation,12.75510204,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_383,58.6,Makay,Starvation,13.62135922,Mackay,chillcoma,21.4512759,Weber,survival_msb,12.68614914,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_385,71.83673469,Makay,Starvation,13.5049505,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_386,37.75438596,Makay,Starvation,13.94897959,Mackay,chillcoma,17.58203814,Weber,survival_msb,11.00556878,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_390,44.73469388,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_391,63.2,Makay,Starvation,12.74,Mackay,chillcoma,29.06394951,Weber,survival_msb,18.05298942,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_392,51.52,Makay,Starvation,18.61616162,Mackay,chillcoma,39.39870481,Weber,survival_msb,12.95068287,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_395,59.84,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_397,50,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_399,55.52,Makay,Starvation,15.82653061,Mackay,chillcoma,24.16117174,Weber,survival_msb,13.54111442,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_40,67.33333333,Makay,Starvation, -, -, -,35.51776896,Weber,survival_msb,23.84889716,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_405,58.72,Makay,Starvation, -, -, -,34.79754326,Weber,survival_msb,24.12193783,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_406,59.06382979,Makay,Starvation, -, -, -,31.03304674,Weber,survival_msb,15.8761045,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_409,51.04,Makay,Starvation,12.40625,Mackay,chillcoma,21.12648258,Weber,survival_msb,14.76700231,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_41,77.71428571,Makay,Starvation,35.66292135,Mackay,chillcoma,40.42853285,Weber,survival_msb,15.9317915,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_42,39.83673469,Makay,Starvation,29.07070707,Mackay,chillcoma,20.69523258,Weber,survival_msb,8.2292791,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_426,54.59649123,Makay,Starvation,11.74747475,Mackay,chillcoma,17.25518215,Weber,survival_msb,11.49554894,Weber,survival_paraquat,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST,ST,ST,ST
+DGRP_427,53.25252525,Makay,Starvation,9.545454545,Mackay,chillcoma,17.85075507,Weber,survival_msb,14.64583085,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_437,64.51376147,Makay,Starvation,19.04040404,Mackay,chillcoma,15.5465884,Weber,survival_msb,13.46344949,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_439,50.5,Makay,Starvation, -, -, -,30.38018215,Weber,survival_msb,13.22402116,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_440,70.35051546,Makay,Starvation,10.5625,Mackay,chillcoma,29.95344604,Weber,survival_msb,22.63791005,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_441,69.12,Makay,Starvation,10.21212121,Mackay,chillcoma,21.20197035,Weber,survival_msb,17.5323545,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_443,58.08,Makay,Starvation,12.62626263,Mackay,chillcoma,21.52358493,Weber,survival_msb,16.41846561,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_45,49.44,Makay,Starvation,14.26262626,Mackay,chillcoma,21.32575507,Weber,survival_msb,16.00229497,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_461,40.48,Makay,Starvation,17,Mackay,chillcoma,28.72019951,Weber,survival_msb,10.67263228,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_48,78.88,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_486,68.8,Makay,Starvation,12.19191919,Mackay,chillcoma,18.63834188,Weber,survival_msb,30.34391824,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_49,66.08,Makay,Starvation,14.8,Mackay,chillcoma,32.25518215,Weber,survival_msb,12.22451719,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_491,78.4,Makay,Starvation,11.93203883,Mackay,chillcoma,36.72827243,Weber,survival_msb,25.86499339,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_492,70.26666667,Makay,Starvation,10.28476821,Mackay,chillcoma,21.20552937,Weber,survival_msb,22.27957672,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_502,42.6122449,Makay,Starvation,11.81904762,Mackay,chillcoma,24.53530368,Weber,survival_msb,13.52679894,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_505,41.63265306,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_508,52.96,Makay,Starvation,29.21333333,Mackay,chillcoma,31.68634535,Weber,survival_msb,12.57471561,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_509, -, -, -,22.46,Mackay,chillcoma,21.61785576,Weber,survival_msb,14.09624339,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_513,44.64,Makay,Starvation, -, -, -,24.89398424,Weber,survival_msb,14.20457672,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_517,44.32,Makay,Starvation,18.85714286,Mackay,chillcoma,20.69797729,Weber,survival_msb,22.07390956,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_528,61.2244898,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV/ST,INV/ST,ST,ST,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_530,71.34020619,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_531,56,Makay,Starvation,16.5631068,Mackay,chillcoma,19.76950507,Weber,survival_msb,13.30179894,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_535,60.8,Makay,Starvation,11.86868687,Mackay,chillcoma,20.66898424,Weber,survival_msb,11.52781581,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_551,55.84,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_555,50.88,Makay,Starvation,8.791666667,Mackay,chillcoma,24.8028384,Weber,survival_msb,18.2715224,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_559,54.53061224,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,INV/ST,ST
+DGRP_563,57.76,Makay,Starvation,11.20212766,Mackay,chillcoma,25.95804674,Weber,survival_msb,15.62263227,Weber,survival_paraquat,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_566,59.84,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,INV/ST
+DGRP_57,48.64,Makay,Starvation,24.59574468,Mackay,chillcoma,17.87723076,Weber,survival_msb,12.34479497,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_584,62.08,Makay,Starvation,12.69072165,Mackay,chillcoma, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_589,64.32,Makay,Starvation,23.71698113,Mackay,chillcoma,25.02219604,Weber,survival_msb,28.71531581,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_59,45.06122449,Makay,Starvation,13.70408163,Mackay,chillcoma,15.41655368,Weber,survival_msb,12.04910053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_595,56.81632653,Makay,Starvation,12.34951456,Mackay,chillcoma,24.03894951,Weber,survival_msb,12.05874339,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_596,70.88,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_627,48.48,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_630,68.08888889,Makay,Starvation, -, -, -, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_634,55.51020408,Makay,Starvation, -, -, -, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_639,56.8,Makay,Starvation,22.7628866,Mackay,chillcoma,24.12922729,Weber,survival_msb,15.05068907,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_642,89,Makay,Starvation,16.73,Mackay,chillcoma,38.34441826,Weber,survival_msb,23.8761045,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_646,77.71428571,Makay,Starvation,22.59,Mackay,chillcoma,24.68687858,Weber,survival_msb,17.7151422,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST
+DGRP_69,49.63265306,Makay,Starvation,9.869565217,Mackay,chillcoma,13.98585758,Weber,survival_msb,10.54850033,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST,ST
+DGRP_703,45.6,Makay,Starvation,21.375,Mackay,chillcoma,9.759386023,Weber,survival_msb,11.0042915,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_705,74.66666667,Makay,Starvation,24,Mackay,chillcoma,45.69780368,Weber,survival_msb,31.4620172,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_707,80.48979592,Makay,Starvation,18.73913043,Mackay,chillcoma,27.83625854,Weber,survival_msb,10.29660053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_712,39.84,Makay,Starvation,14.76470588,Mackay,chillcoma,19.58903632,Weber,survival_msb,18.57603629,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_714,74.6122449,Makay,Starvation,16.25742574,Mackay,chillcoma,26.04919257,Weber,survival_msb,18.9706746,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_716,87.04,Makay,Starvation,16.10204082,Mackay,chillcoma,22.15502094,Weber,survival_msb,19.81800678,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_721,63.33333333,Makay,Starvation,17.66298343,Mackay,chillcoma,31.11008047,Weber,survival_msb,17.11193039,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST,ST,ST,ST
+DGRP_727,46.70588235,Makay,Starvation,29.62105263,Mackay,chillcoma,16.86614445,Weber,survival_msb,18.84465608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_73,73.92,Makay,Starvation,33.81818182,Mackay,chillcoma,20.01814925,Weber,survival_msb,9.274988426,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_730,68.73469388,Makay,Starvation,13.82828283,Mackay,chillcoma,47.90092868,Weber,survival_msb,33.44160053,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_732,40,Makay,Starvation,14.48453608,Mackay,chillcoma,24.16047729,Weber,survival_msb,10.97206349,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_737,66.4,Makay,Starvation,13.98947368,Mackay,chillcoma,20.65720348,Weber,survival_msb,16.90880539,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_738,46.08,Makay,Starvation,14.49,Mackay,chillcoma,24.00920001,Weber,survival_msb,7.920350529,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_748,63.68,Makay,Starvation,14.60194175,Mackay,chillcoma, -, -, -, -, -, -,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_75,90.24,Makay,Starvation,24.06060606,Mackay,chillcoma,17.11189925,Weber,survival_msb,14.32312831,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_757,54.54545455,Makay,Starvation,16.06849315,Mackay,chillcoma,17.82515983,Weber,survival_msb,10.2261665,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_761,54.88,Makay,Starvation,15.2970297,Mackay,chillcoma,11.9621638,Weber,survival_msb,14.06323247,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_765,38.08,Makay,Starvation,17.69387755,Mackay,chillcoma,14.32506063,Weber,survival_msb,10.31831928,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_774,60.64,Makay,Starvation,13.69473684,Mackay,chillcoma,18.37098076,Weber,survival_msb,11.18664683,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_776,79.68,Makay,Starvation,21.20560748,Mackay,chillcoma,25.06267223,Weber,survival_msb,21.14144428,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST
+DGRP_783,60,Makay,Starvation,15.57692308,Mackay,chillcoma,27.75224316,Weber,survival_msb,13.79127067,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_786,64.16,Makay,Starvation,18.23076923,Mackay,chillcoma,22.53894951,Weber,survival_msb,15.03965608,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST,ST,ST
+DGRP_787,59.57446809,Makay,Starvation,23.81553398,Mackay,chillcoma,20.67445299,Weber,survival_msb,17.23033317,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_790,71.67346939,Makay,Starvation,28.19607843,Mackay,chillcoma,37.96487957,Weber,survival_msb,19.08476025,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_796,62.72,Makay,Starvation,20.63366337,Mackay,chillcoma,14.64896936,Weber,survival_msb,12.81531581,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_799,72.8,Makay,Starvation,21.24,Mackay,chillcoma,16.62714396,Weber,survival_msb,15.18363467,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_801,58.44897959,Makay,Starvation,14.3627451,Mackay,chillcoma,22.52327491,Weber,survival_msb,15.53892692,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_802,66.24,Makay,Starvation,12.05825243,Mackay,chillcoma,18.12674713,Weber,survival_msb,16.799604,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST
+DGRP_804,54.56716418,Makay,Starvation,24.28431373,Mackay,chillcoma,14.21067571,Weber,survival_msb,11.70021164,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_805,55.02040816,Makay,Starvation,14.66666667,Mackay,chillcoma,29.16910824,Weber,survival_msb,21.96705192,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_808,42.7755102,Makay,Starvation,13.21153846,Mackay,chillcoma,31.13211668,Weber,survival_msb,17.03675678,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_810,61.3877551,Makay,Starvation,10.73529412,Mackay,chillcoma,24.65947283,Weber,survival_msb,13.42555886,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_812,91.2,Makay,Starvation,19.5,Mackay,chillcoma,27.67447779,Weber,survival_msb,16.77859706,Weber,survival_paraquat,INV/ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_818,69,Makay,Starvation,26.42857143,Mackay,chillcoma,18.34748126,Weber,survival_msb,10.64656581,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_819,49.92,Makay,Starvation,12.84313725,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_820,64.33333333,Makay,Starvation,14.58163265,Mackay,chillcoma,42.90370646,Weber,survival_msb,29.70655134,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_821,65.6,Makay,Starvation,29.21505376,Mackay,chillcoma, -, -, -, -, -, -,ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_822,77.71428571,Makay,Starvation,20.21428571,Mackay,chillcoma,18.56484237,Weber,survival_msb,18.37009011,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_83,55.52,Makay,Starvation,18.8974359,Mackay,chillcoma,34.25457451,Weber,survival_msb,12.04716104,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_832,65.77777778,Makay,Starvation,17.02970297,Mackay,chillcoma,23.11285824,Weber,survival_msb,20.23102761,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_837,67.24324324,Makay,Starvation,19.12,Mackay,chillcoma,19.61633047,Weber,survival_msb,17.57286789,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_843,75.40425532,Makay,Starvation,25.83333333,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_849,76.17391304,Makay,Starvation,14.31067961,Mackay,chillcoma, -, -, -, -, -, -,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_85,43.04,Makay,Starvation,10.47126437,Mackay,chillcoma,17.32540785,Weber,survival_msb,7.3042791,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_850,45.86666667,Makay,Starvation,21.8,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_852,66.7755102,Makay,Starvation,13.39583333,Mackay,chillcoma,34.7872134,Weber,survival_msb,11.02136905,Weber,survival_paraquat,ST,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_853,56.32653061,Makay,Starvation,15.44554455,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_855,51.42857143,Makay,Starvation,20.23762376,Mackay,chillcoma,47.88020696,Weber,survival_msb,17.47234706,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST
+DGRP_857,57.46938776,Makay,Starvation,12.09558824,Mackay,chillcoma,36.56631807,Weber,survival_msb,27.16557622,Weber,survival_paraquat,ST,INV/ST,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_859,64.96,Makay,Starvation,13.70967742,Mackay,chillcoma,38.01794257,Weber,survival_msb,17.54396164,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_861,50.89361702,Makay,Starvation,36.49019608,Mackay,chillcoma,31.11969108,Weber,survival_msb,17.07529845,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_879,57.30612245,Makay,Starvation, -, -, -,33.77122878,Weber,survival_msb,19.78649636,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_88,50.93877551,Makay,Starvation,22.86458333,Mackay,chillcoma,24.19216132,Weber,survival_msb,16.02332672,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_882,89.28,Makay,Starvation,35.15533981,Mackay,chillcoma,24.40373126,Weber,survival_msb,18.680854,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_884,50.89361702,Makay,Starvation,26.04166667,Mackay,chillcoma,12.28220348,Weber,survival_msb,13.21566303,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,ST
+DGRP_887,73.66666667,Makay,Starvation,16.36734694,Mackay,chillcoma,12.80385527,Weber,survival_msb,15.21444775,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_890,50.28571429,Makay,Starvation,20.62,Mackay,chillcoma,22.85840636,Weber,survival_msb,14.79778109,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_892,64,Makay,Starvation,25.03157895,Mackay,chillcoma,16.08359237,Weber,survival_msb,22.08936095,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_894,64.16,Makay,Starvation,15.02912621,Mackay,chillcoma,23.53774664,Weber,survival_msb,21.71323247,Weber,survival_paraquat,INV/ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_897,63.67346939,Makay,Starvation,37.38383838,Mackay,chillcoma,15.10084188,Weber,survival_msb,17.29995122,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_900,50.4,Makay,Starvation,33.18867925,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_907,59.52,Makay,Starvation,22.69473684,Mackay,chillcoma,15.85631062,Weber,survival_msb,13.4636665,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST
+DGRP_908,68.64,Makay,Starvation,21.3960396,Mackay,chillcoma,20.59668761,Weber,survival_msb,16.57495122,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV,ST
+DGRP_91,71.36,Makay,Starvation,13.38709677,Mackay,chillcoma,37.29068563,Weber,survival_msb,16.32186343,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_911,44.08163265,Makay,Starvation,13.35051546,Mackay,chillcoma,17.07637511,Weber,survival_msb,13.065229,Weber,survival_paraquat,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
+DGRP_913,78.88,Makay,Starvation,13.61764706,Mackay,chillcoma, -, -, -, -, -, -,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,INV/ST,ST,ST,INV/ST,ST,ST
+DGRP_93,57.12,Makay,Starvation,12.43478261,Mackay,chillcoma,31.97023258,Weber,survival_msb,20.79200232,Weber,survival_paraquat,INV,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST,ST
