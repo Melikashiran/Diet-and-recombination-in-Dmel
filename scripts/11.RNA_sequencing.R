@@ -18,16 +18,16 @@ dgrp42$delabel=ifelse(dgrp42$gene_name %in% head(dgrp42[order(dgrp42$pvalue), "g
 volcanoplot42 <- ggplot(data = dgrp42, aes(x = log2FoldChange, y = -log10(pvalue), col = diffexpressed,label=delabel)) +
   geom_vline(xintercept = 0, col = "gray", linetype = 'dashed') +
   geom_hline(yintercept = -log10(0.01301), col = "gray", linetype = 'dashed') +
-  geom_point(size = 2) + theme_base() +
+  geom_point(size = 3) + theme_base() + theme(axis.text = element_text(size = 20), axis.title = element_text(size = 25),panel.background = element_rect(fill = "white", colour = "black"), plot.background = element_rect(fill = "white", colour = NA) ) +
   scale_color_manual(values = c("#a63603", "grey", "#fdd0a2")) + # to set the colours of our variable      
   coord_cartesian(ylim = c(0, 22), xlim = c(-10, 14)) + # since some genes can have minuslog10padj of inf, we set these limits
   labs(color = '', #legend_title,
        x = expression("log"[2]*"FC"), y = expression("-log"[10]*"p-value")) +
   scale_x_continuous(breaks = seq(-10, 14, 10))+scale_y_continuous(breaks = seq(0, 22,10)) + # to customise the breaks in the x axis
-  geom_text_repel(max.overlaps = 10) # To show all labels 
+  geom_text_repel(max.overlaps = 10,size=6) # To show all labels 
 volcanoplot42
 
-ggsave("images/DGRP_42_volcano.png",plot=volcanoplot42)
+ggsave("images/DGRP_42_volcano.png",plot=volcanoplot42,dpi=600,width=8,height=6,units="in")
 
 
 dgrp217=read.csv("rawdata/S217_LC_D0vsS217_HC_D0_deg.csv")
@@ -43,16 +43,16 @@ dgrp217$delabel=ifelse(dgrp217$gene_name %in% head(dgrp217[order(dgrp217$pvalue)
 volcanoplot217 <- ggplot(data = dgrp217, aes(x = log2FoldChange, y = -log10(pvalue), col = diffexpressed,label=delabel)) +
   geom_vline(xintercept = 0, col = "gray", linetype = 'dashed') +
   geom_hline(yintercept = -log10(0.01301), col = "gray", linetype = 'dashed') +
-  geom_point(size = 2) + theme_base() +
+  geom_point(size = 2) + theme_base() + theme(axis.text = element_text(size = 20), axis.title = element_text(size = 25),panel.background = element_rect(fill = "white", colour = "black"), plot.background = element_rect(fill = "white", colour = NA) ) +
   scale_color_manual(values = c("#08519c", "grey", "#c6dbef")) + # to set the colours of our variable      
   coord_cartesian(ylim = c(0, 22), xlim = c(-10, 14)) + # since some genes can have minuslog10padj of inf, we set these limits
   labs(color = '', #legend_title,
        x = expression("log"[2]*"FC"), y = expression("-log"[10]*"p-value")) +
   scale_x_continuous(breaks = seq(-10, 14, 10))+scale_y_continuous(breaks = seq(0, 22,10)) + # to customise the breaks in the x axis
-  geom_text_repel(max.overlaps = 10) # To show all labels 
+  geom_text_repel(max.overlaps = 10,size=6) # To show all labels 
 volcanoplot217
 
-ggsave("images/DGRP_217_volcano.png",plot=volcanoplot217)
+ggsave("images/DGRP_217_volcano.png",plot=volcanoplot217,dpi=600,width=8,height=6,units="in")
 
 
 
