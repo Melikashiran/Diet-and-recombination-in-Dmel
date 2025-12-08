@@ -61,9 +61,9 @@ library(ggthemes)
 pale=c("#fdd0a2","#c6dbef")
 
 ggplot(data=long_df, aes(x = treat, y = log2(FPKM + 1),fill=strain)) +
-  geom_boxplot() + #facet_wrap(~ID) +
+  geom_boxplot() + theme_minimal() + theme(axis.text = element_text(size = 20), axis.title = element_text(size = 25),panel.background = element_rect(fill = "white", colour = "black"), plot.background = element_rect(fill = "white", colour = NA) ) + 
   labs(title = "Expression by Diet and Strain", x = "Diet", y = "FPKM") +
-  theme_minimal() +scale_fill_manual(values = pale) 
-ggsave("images/piRNA.png")
+  scale_fill_manual(values = pale) 
+ggsave("images/piRNA.png",dpi=600,width=8,height=6,units="in")
 
 #Conclusion: S42 has lower overall piRNA expression regardless of diet
