@@ -49,33 +49,34 @@ source("scripts/05b.COI.R")
 ## Remove haplotype columns
 recomb <- recomb[,!names(recomb) %in% haplotypes]
 
-#Summarize without correction first to compare to FULL dataset
-recomb_rate=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M~MaternalVial+vial_letter+PaternalStock+Treatment,data=recomb,FUN=sum,na.rm=T)
-recomb_rate=recomb_rate[recomb_rate$num_M.sum>=5,]
-recomb_rate$ycv_rr=recomb_rate$ycv_count.sum/recomb_rate$num_M.sum
-recomb_rate$cvv_rr=recomb_rate$cvv_count.sum/recomb_rate$num_M.sum
-recomb_rate$vf_rr=recomb_rate$vf_count.sum/recomb_rate$num_M.sum
-recomb_rate$recomb_rate=rowSums(recomb_rate[,c("ycv_rr","cvv_rr","vf_rr")],na.rm=TRUE)
-recomb_summary <- aggregate(recomb_rate[, c("recomb_rate", "ycv_rr", "cvv_rr", "vf_rr")], by = list(recomb_rate$Treatment, recomb_rate$PaternalStock), mean)
-names(recomb_summary)[1:2] <- c("Treatment", "PaternalStock")
+# Summarize at vial + brood level
+recomb_rate = summaryBy(co_inds + ycv_count + cvv_count + vf_count + num_M ~ 
+                          MaternalVial + vial_letter + PaternalStock + Treatment,
+                        data = recomb, FUN = sum, na.rm = T)
+recomb_rate = recomb_rate[recomb_rate$num_M.sum >= 5, ]
 
-recomb_summary$treat=ifelse(recomb_summary$Treatment=="2x",2,ifelse(recomb_summary$Treatment=="1x",1,0.5))
+# Raw rates
+recomb_rate$ycv_rr       = recomb_rate$ycv_count.sum / recomb_rate$num_M.sum
+recomb_rate$cvv_rr       = recomb_rate$cvv_count.sum / recomb_rate$num_M.sum
+recomb_rate$vf_rr        = recomb_rate$vf_count.sum  / recomb_rate$num_M.sum
+recomb_rate$recomb_rate  = rowSums(recomb_rate[, c("ycv_rr", "cvv_rr", "vf_rr")], na.rm = TRUE)
 
+# Kosambi-corrected rates
+recomb_rate$ycv_rr_kosambi      = kosambi_correction(recomb_rate$ycv_count.sum / recomb_rate$num_M.sum)
+recomb_rate$cvv_rr_kosambi      = kosambi_correction(recomb_rate$cvv_count.sum / recomb_rate$num_M.sum)
+recomb_rate$vf_rr_kosambi       = kosambi_correction(recomb_rate$vf_count.sum  / recomb_rate$num_M.sum)
+recomb_rate$recomb_rate_kosambi = rowSums(recomb_rate[, c("ycv_rr_kosambi", "cvv_rr_kosambi", "vf_rr_kosambi")], na.rm = TRUE)
 
+# Save full vial + brood level data (both raw and corrected)
+write.csv(recomb_rate, "output/recomb_rate_full.csv", row.names = FALSE)
+
+# Summary aggregated by Treatment + PaternalStock (raw, for comparison)
+recomb_summary = aggregate(recomb_rate[, c("recomb_rate", "ycv_rr", "cvv_rr", "vf_rr")],
+                           by = list(recomb_rate$Treatment, recomb_rate$PaternalStock), mean)
+names(recomb_summary)[1:2] = c("Treatment", "PaternalStock")
+recomb_summary$treat = ifelse(recomb_summary$Treatment == "2x", 2,
+                              ifelse(recomb_summary$Treatment == "1x", 1, 0.5))
 write.csv(recomb_summary, "output/recombination_summary.csv", row.names = FALSE)
-
-# Repeat with Kosambi Correction for Table in Paper:
-recomb_rate=summaryBy(co_inds+ycv_count+cvv_count+vf_count+num_M~MaternalVial+vial_letter+PaternalStock+Treatment,data=recomb,FUN=sum,na.rm=T)
-recomb_rate=recomb_rate[recomb_rate$num_M.sum>=5,]
-recomb_rate$ycv_rr=kosambi_correction(recomb_rate$ycv_count.sum/recomb_rate$num_M.sum)
-recomb_rate$cvv_rr=kosambi_correction(recomb_rate$cvv_count.sum/recomb_rate$num_M.sum)
-recomb_rate$vf_rr=kosambi_correction(recomb_rate$vf_count.sum/recomb_rate$num_M.sum)
-recomb_rate$recomb_rate=rowSums(recomb_rate[,c("ycv_rr","cvv_rr","vf_rr")],na.rm=TRUE)
-recomb_summary <- aggregate(recomb_rate[, c("recomb_rate", "ycv_rr", "cvv_rr", "vf_rr")], by = list(recomb_rate$Treatment, recomb_rate$PaternalStock), mean)
-names(recomb_summary)[1:2] <- c("Treatment", "PaternalStock")
-
-recomb_summary$treat=ifelse(recomb_summary$Treatment=="2x",2,ifelse(recomb_summary$Treatment=="1x",1,0.5))
-
 
 ## Stats and figures
 
@@ -373,6 +374,7 @@ odds_figure_vf=ggplot(aes(y=vf_or,x=vial_letter,group=contrast,col=contrast,shap
   annotate(geom="text", x=1, y=2.5, label=odds_ratio$vf_sig[3],color="#7570b3",size=10)+annotate(geom="text", x=2, y=2.5, label=odds_ratio$vf_sig[6],color="#7570b3",size=10)+annotate(geom="text", x=3, y=2.5, label=odds_ratio$vf_sig[9],color="#7570b3",size=10)+annotate(geom="text", x=4, y=2.5, label=odds_ratio$vf_sig[12],color="#7570b3",size=10)
 odds_figure_vf
 dev.off()
+
 
 
 

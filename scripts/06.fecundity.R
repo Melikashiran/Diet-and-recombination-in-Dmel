@@ -1,67 +1,68 @@
-fecund <- by_vialday[, c("Treatment", "PaternalStock", "vial_num", "vial_letter", "num_offspring", "num_moms")]
+# ---- FECUNDITY ANALYSIS ----
 
-## Remove rows with less than 10 offspring
-#### fecund <- fecund[fecund$num_offspring >= 10,]
+# Extract relevant columns - same structure as recombination
+fecund <- by_vialday[, c("Treatment", "PaternalStock", "MaternalVial", "vial_num", "vial_letter", "num_offspring", "num_moms")]
 
-## Calculate per vial per letter fecundity
-fecund$fecundity <- fecund$num_offspring/fecund$num_moms
+# Calculate per vial per letter fecundity
+fecund$fecundity <- fecund$num_offspring / fecund$num_moms
 
-fecund_by_vial <- aggregate(fecundity ~ vial_num+vial_letter, data = fecund, sum)
-fecund_by_vial <- merge(fecund_by_vial, backcross, by.x = "vial_num", by.y = "CrossID")
+# Summarize by MaternalVial + vial_letter (mirrors recomb_rate summaryBy)
+fecund_by_vial <- summaryBy(fecundity + num_offspring + num_moms ~ 
+                              MaternalVial + vial_letter + PaternalStock + Treatment,
+                            data = fecund, FUN = sum, na.rm = T)
 
-write.csv(fecund_by_vial,file="output/fecund_by_vial.csv",row.names = F,quote = F)
+# Recalculate fecundity after summing (total offspring / total moms)
+fecund_by_vial$fecundity <- fecund_by_vial$num_offspring.sum / fecund_by_vial$num_moms.sum
 
-fecund_summary <- aggregate(fecundity ~ Treatment + PaternalStock, data = fecund_by_vial, mean)
+# Save full vial + brood level fecundity
+write.csv(fecund_by_vial, "output/fecund_by_vial.csv", row.names = FALSE, quote = FALSE)
 
-#make day and vial number a factor
-fecund_by_vial$vial_letter=as.factor(fecund_by_vial$vial_letter)
-fecund_by_vial$vial_num=as.factor(fecund_by_vial$vial_num)
+# Summary by Treatment + PaternalStock
+fecund_summary <- aggregate(fecundity ~ Treatment + PaternalStock, 
+                            data = fecund_by_vial, mean)
 
-## Poisson
-#fit_fec <- glmer(fecundity ~ (1|MaternalVial)+Treatment*PaternalStock*vial_letter, data = fecund_by_vial, family = "poisson")
-#fecundity_stats <- Anova(fit_fec, test = "Chisq")
+# Make factors
+fecund_by_vial$vial_letter  <- as.factor(fecund_by_vial$vial_letter)
+fecund_by_vial$MaternalVial <- as.factor(fecund_by_vial$MaternalVial)
 
-##Negative Binomial
-fit_fec <- glmer.nb(fecundity ~ (1|MaternalVial)+Treatment*PaternalStock*vial_letter, data = fecund_by_vial)
+# ---- STATS ----
+# Negative Binomial model - mirrors recombination GLMER structure
+fit_fec <- glmer.nb(round(fecundity) ~ (1|MaternalVial) + Treatment * PaternalStock * vial_letter, 
+                    data = fecund_by_vial)
 fecundity_stats <- Anova(fit_fec)
 fecundity_stats
-
 write.csv(fecundity_stats, "output/fecundity-stats_anova.csv")
 
-## Fecundity figure
-fecund_figure <- ggplot(fecund_by_vial, aes(x=Treatment, y=fecundity, col=PaternalStock)) +
+# ---- FIGURES ----
+# Overall fecundity by treatment
+fecund_figure <- ggplot(fecund_by_vial, aes(x = Treatment, y = fecundity, col = factor(PaternalStock))) +
   xlab("Caloric Density") + ylab("# progeny per mom") + ggtitle("Fecundity") +
   ylim(0, 80) +
   theme(axis.text.x = element_text(angle = 0)) +
-  geom_boxplot() + scale_color_discrete(name = "Treatment")
-
+  geom_boxplot() + scale_color_discrete(name = "Paternal Stock")
 fecund_figure
 ggsave("images/fecundity-figure.png")
 
-## Fecundity figure by day
-fecund_figure <- ggplot(fecund_by_vial, aes(x=Treatment, y=fecundity, col=PaternalStock)) + facet_wrap(~vial_letter) +
-  xlab("Caloric Density") + ylab("# progeny per mom") + ggtitle("Fecundity") +
+# Fecundity by brood/day
+fecund_figure_day <- ggplot(fecund_by_vial, aes(x = Treatment, y = fecundity, col = factor(PaternalStock))) + 
+  facet_wrap(~vial_letter) +
+  xlab("Caloric Density") + ylab("# progeny per mom") + ggtitle("Fecundity by Brood") +
   ylim(0, 80) +
   theme(axis.text.x = element_text(angle = 0)) +
-  geom_boxplot() + scale_color_discrete(name = "Treatment")
-
-fecund_figure
+  geom_boxplot() + scale_color_discrete(name = "Paternal Stock")
+fecund_figure_day
 ggsave("images/fecundity-figure-byDay.png")
 
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="42"])
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="217"])
+# ---- SUMMARY STATS ----
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "42"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "217"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "42"  & fecund_by_vial$Treatment == "0.5x"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "217" & fecund_by_vial$Treatment == "0.5x"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "42"  & fecund_by_vial$Treatment == "1x"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "217" & fecund_by_vial$Treatment == "1x"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "42"  & fecund_by_vial$Treatment == "2x"])
+mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock == "217" & fecund_by_vial$Treatment == "2x"])
 
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="42" & fecund_by_vial$Treatment=="0.5x"])
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="217" & fecund_by_vial$Treatment=="0.5x"])
-
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="42" & fecund_by_vial$Treatment=="1x"])
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="217" & fecund_by_vial$Treatment=="1x"])
-
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="42" & fecund_by_vial$Treatment=="2x"])
-mean(fecund_by_vial$fecundity[fecund_by_vial$PaternalStock=="217" & fecund_by_vial$Treatment=="2x"])
-
-
-#get number of vials with zero progeny
-length(fecund_by_vial$vial_num[fecund_by_vial$fecundity==0 & fecund_by_vial$PaternalStock=="217"])
-
-length(fecund_by_vial$vial_num[fecund_by_vial$fecundity==0 & fecund_by_vial$PaternalStock=="42"])
+# Zero progeny vials
+length(fecund_by_vial$MaternalVial[fecund_by_vial$fecundity == 0 & fecund_by_vial$PaternalStock == "217"])
+length(fecund_by_vial$MaternalVial[fecund_by_vial$fecundity == 0 & fecund_by_vial$PaternalStock == "42"])
